@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="flex justify-center items-center space-x-2 sm:space-x-8 text-sm sm:text-2xl">
           {/* الروابط الخاصة بالأيقونات */}
           <a
-            href="https://facebook.com"
+            href="https://web.facebook.com/groups/471474843578250/user/61557032068304/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 hover:text-blue-600 transition duration-300"
