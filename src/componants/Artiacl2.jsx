@@ -14,7 +14,7 @@ const articles = [
 
 const ArticlesSection = () => {
   return (
-    <div className="flex flex-col items-start mt-10 space-y-2">
+    <div className="flex flex-col items-start mt-10 space-y-4 p-2 ">
       <h2 className="text-xl font-bold mb-4">Chocolate Articles</h2>
       {articles.map((article, index) => (
         <a

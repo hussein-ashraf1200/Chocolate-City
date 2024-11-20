@@ -6,6 +6,7 @@ import Events from './componants/Events'
 import Footer from './componants/Footer'
 import Artiacl from './componants/Artiacl'
 
+
 function App() {
   return (
     <div>
@@ -23,7 +24,6 @@ function App() {
         <Artiacl />
       </div>
       <Footer />
-      
     </div>
   )
 }

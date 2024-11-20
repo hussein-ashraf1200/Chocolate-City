@@ -3,29 +3,28 @@ import logo from "../assets/img/logo.jpg";
 import anime from "animejs";
 import { AiOutlineBars } from "react-icons/ai";
 import { FaCartShopping } from "react-icons/fa6";
-import { Link } from "react-scroll"; // استيراد Link من react-scroll
+import { Link } from "react-scroll";
+import Cart from "./Cart"; // استيراد Cart
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // حالة القائمة
 
   useEffect(() => {
-    // أنيميشن للشعار
     anime({
       targets: "#logo",
-      translateX: [0, 100], // الانتقال من 0 إلى 250
-      direction: "alternate", // العودة بعد الانتقال
-      loop: false, // عدم التكرار
-      easing: "linear", // تأثير الانتقال
+      translateX: [0, 100],
+      direction: "alternate",
+      loop: false,
+      easing: "linear",
       complete: function () {
         anime({
           targets: "#logo",
-          translateX: 0, // إعادة العنصر إلى 0px
+          translateX: 0,
           easing: "linear",
         });
       },
     });
 
-    // أنيميشن للعناصر داخل القائمة
     anime({
       targets: ".nav-item",
       opacity: [0, 1],
@@ -35,7 +34,6 @@ function Navbar() {
       duration: 2000,
     });
 
-    // أنيميشن للقائمة المنسدلة عند فتحها
     if (isMenuOpen) {
       anime({
         targets: ".dropdown-menu",
@@ -51,6 +49,8 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+
+
   return (
     <div className="flex justify-between items-center p-4 navbar relative">
       <div className="w-16 rounded">
@@ -58,7 +58,10 @@ function Navbar() {
       </div>
 
       <div className="p-2 relative flex flex-row sm:flex-col">
-        <div onClick={toggleMenu} className="flex sm:hidden text-3xl cursor-pointer relative z-10">
+        <div
+          onClick={toggleMenu}
+          className="flex sm:hidden text-3xl cursor-pointer relative z-10"
+        >
           <AiOutlineBars />
         </div>
 
@@ -69,26 +72,28 @@ function Navbar() {
             } dropdown-menu absolute top-full right-0 mt-2 sm:flex sm:static sm:space-x-14 border-2 pr-1 pl-4 rounded-xl flex-col sm:flex-row space-y-1 sm:space-y-0`}
           >
             <li className="nav-item hover:underline hover:text-emerald-400">
-              <Link to="home" smooth={true} duration={500}>Home</Link> {/* الانتقال إلى القسم home */}
+              <Link to="home" smooth={true} duration={500}>
+                Home
+              </Link>
             </li>
             <li className="nav-item hover:underline hover:text-emerald-400">
-              <Link to="products" smooth={true} duration={500}>Products</Link> {/* الانتقال إلى القسم products */}
+              <Link to="products" smooth={true} duration={500}>
+                Products
+              </Link>
             </li>
             <li className="nav-item hover:underline hover:text-emerald-400">
-              <Link to="events" smooth={true} duration={500}>Events</Link> {/* الانتقال إلى القسم events */}
+              <Link to="events" smooth={true} duration={500}>
+                Events
+              </Link>
             </li>
             <li className="nav-item hover:underline hover:text-emerald-400">
-              <Link to="articles" smooth={true} duration={500}>Articles</Link> {/* الانتقال إلى القسم articles */}
+              <Link to="articles" smooth={true} duration={500}>
+                Articles
+              </Link>
             </li>
           </ul>
 
-          <div className="flex items-center justify-center mt-0 ml-0 sm:ml-1 sm:mt-3">
-            <div className="text-2xl">
-              <FaCartShopping />
-            </div>
-            {/* عرض قيمة counter هنا */}
-            <p className="text-red-600"></p>
-          </div>
+
         </div>
       </div>
     </div>
